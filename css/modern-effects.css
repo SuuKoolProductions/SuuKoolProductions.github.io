@@ -1,0 +1,772 @@
+/* Modern Effects CSS for SuuKool Productions 2025 Refresh */
+
+:root {
+  --primary-color: #4aa8ff;
+  --primary-hover: #3b96e8;
+  --dark-color: #222;
+  --light-color: #fff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --glow-color: rgba(74, 168, 255, 0.3);
+  --gradient-bg: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 50%, #2a2a2a 100%);
+  --gradient-light: linear-gradient(135deg, #444 0%, #555 50%, #444 100%);
+}
+
+/* =============== GLOBAL EFFECTS =============== */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--gradient-bg);
+  color: #eee;
+}
+
+.bg-light-gray {
+  background: var(--gradient-light) !important;
+}
+
+/* Modern box shadows */
+.shadow-soft {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.shadow-soft:hover {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-strong {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.shadow-strong:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* =============== NAVBAR EFFECTS =============== */
+
+.navbar-default {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(42, 42, 42, 0.85) !important;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-default.navbar-shrink {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(42, 42, 42, 0.92) !important;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-default .navbar-brand {
+  background: linear-gradient(90deg, var(--primary-color), #2cc0ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent !important;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 3px rgba(74, 168, 255, 0.1);
+}
+
+.navbar-default .navbar-brand:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 0 10px rgba(74, 168, 255, 0.5),
+               0 0 20px rgba(74, 168, 255, 0.3),
+               0 0 30px rgba(74, 168, 255, 0.2);
+}
+
+.navbar-default .nav li a {
+  position: relative;
+  transition: all 0.3s ease;
+  color: #eee;
+}
+
+.navbar-default .nav li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 10px;
+  left: 50%;
+  background: var(--primary-color);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  opacity: 0;
+  box-shadow: 0 0 8px 1px rgba(74, 168, 255, 0.5);
+}
+
+.navbar-default .nav li a:hover::after {
+  width: 50%;
+  opacity: 1;
+}
+
+.navbar-default .nav li a:hover {
+  transform: translateY(-2px);
+  color: var(--primary-color);
+  text-shadow: 0 0 8px rgba(74, 168, 255, 0.3);
+}
+
+.navbar-default .navbar-nav>.active>a {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 10px rgba(74, 168, 255, 0.5);
+}
+
+/* =============== BUTTONS =============== */
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  z-index: 1;
+}
+
+.btn:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  z-index: -1;
+}
+
+.btn:hover:before {
+  width: 100%;
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+  transform: translateY(-2px);
+}
+
+.btn-xl {
+  border-radius: 100px !important;
+  box-shadow: 0 10px 30px rgba(254, 209, 54, 0.2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-xl:hover {
+  box-shadow: 0 15px 35px rgba(254, 209, 54, 0.3);
+  transform: translateY(-7px) scale(1.02);
+}
+
+.page-scroll.btn-xl {
+  position: relative;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* =============== SECTION EFFECTS =============== */
+
+.section-heading {
+  position: relative;
+  margin-bottom: 50px;
+  color: #eee;
+}
+
+.section-heading:after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), #2cc0ff);
+  transform: translateX(-50%);
+  border-radius: 3px;
+}
+
+/* =============== PORTFOLIO EFFECTS =============== */
+
+.portfolio-item {
+  height: 370px;
+  margin-bottom: 30px;
+  transition: all 0.4s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+}
+
+.portfolio-item .portfolio-link {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  height: 75%;
+  border-radius: 12px 12px 0 0;
+  padding: 0;
+  width: 100%;
+}
+
+.portfolio-item .portfolio-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover .portfolio-link img {
+  transform: scale(1.05);
+}
+
+.portfolio-caption {
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0 0 12px 12px;
+  background-color: rgba(40, 40, 40, 0.85) !important;
+  padding: 15px 20px;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  left: 0;
+  right: 0;
+}
+
+.portfolio-caption h4 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.3;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.portfolio-caption p.text-muted {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.3;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+/* =============== PORTFOLIO HOVER EFFECTS =============== */
+
+.portfolio-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  z-index: 5;
+}
+
+.portfolio-hover {
+  background: linear-gradient(135deg, rgba(74, 168, 255, 0.85), rgba(44, 192, 255, 0.85)) !important;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 12px 12px 0 0;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-item:hover .portfolio-hover {
+  opacity: 1;
+}
+
+.portfolio-hover-content {
+  text-align: center;
+  padding: 0 15px;
+}
+
+.portfolio-hover-content i {
+  transform: scale(0);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: white;
+  margin-bottom: 8px;
+}
+
+.portfolio-hover:hover .portfolio-hover-content i {
+  transform: scale(1.2);
+}
+
+/* =============== HEADER EFFECTS =============== */
+
+header {
+  position: relative;
+  overflow: hidden;
+}
+
+header:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+  z-index: 1;
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
+}
+
+.intro-text {
+  animation: fadeIn 1.5s ease-out;
+}
+
+.intro-lead-in {
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: slideUp 1s ease-out 0.5s both;
+}
+
+/* Scroll down indicator */
+.header-scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  animation: fadeIn 1.5s ease-out 1s both, bounce 2s ease-in-out infinite;
+}
+
+.header-scroll-indicator span {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-bottom: 2px solid var(--primary-color);
+  border-right: 2px solid var(--primary-color);
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: scrollAnimation 2s infinite;
+}
+
+.header-scroll-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.header-scroll-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes scrollAnimation {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-10px, -10px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(10px, 10px);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-15px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-7px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =============== TEAM SECTION EFFECTS =============== */
+
+.team-member img {
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.team-member:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* =============== SERVICE ICONS EFFECTS =============== */
+
+.fa-stack img {
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.service-heading:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+  margin: 10px auto 0;
+}
+
+.col-md-4:hover .service-heading:after {
+  width: 50px;
+}
+
+.col-md-4:hover .fa-stack img {
+  transform: translateY(-10px) rotate(5deg);
+}
+
+/* =============== SOCIAL BUTTONS EFFECTS =============== */
+
+ul.social-buttons li a {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+ul.social-buttons li a:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 10px 20px rgba(74, 168, 255, 0.3);
+}
+
+/* =============== MODAL EFFECTS =============== */
+
+.portfolio-modal .modal-content {
+  border-radius: 15px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.close-modal .lr, .close-modal .lr .rl {
+  transition: all 0.3s ease;
+}
+
+.close-modal:hover .lr {
+  transform: rotate(135deg) scale(1.1);
+}
+
+.close-modal:hover .lr .rl {
+  transform: rotate(90deg) scale(1.1);
+}
+
+/* =============== RESPONSIVE ADJUSTMENTS =============== */
+
+@media (max-width: 992px) {
+  .portfolio-item {
+    height: 350px;
+  }
+  
+  .portfolio-item .portfolio-link {
+    height: 70%;
+  }
+  
+  .portfolio-caption {
+    height: 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn-xl:hover {
+    transform: translateY(-5px) scale(1.01);
+  }
+  
+  .portfolio-item {
+    height: 400px;
+    margin-bottom: 40px;
+  }
+  
+  .portfolio-item .portfolio-link {
+    height: 75%;
+  }
+  
+  .portfolio-caption {
+    height: 25%;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-item {
+    height: 360px;
+  }
+  
+  .portfolio-caption h4 {
+    font-size: 16px;
+  }
+  
+  .portfolio-caption p.text-muted {
+    font-size: 13px;
+  }
+}
+
+/* =============== 3D TILT EFFECT =============== */
+
+.tilt-effect {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.1s ease;
+}
+
+.tilt-inner {
+  transform: translateZ(20px);
+}
+
+/* =============== CUSTOM CURSOR =============== */
+
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(74, 168, 255, 0.5);
+  mix-blend-mode: difference;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: width 0.3s, height 0.3s, background-color 0.3s;
+}
+
+.custom-cursor-follower {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(74, 168, 255, 0.3);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9998;
+  transition: 0.15s cubic-bezier(0.75, -0.27, 0.3, 1.33) transform, 0.3s ease width, 0.3s ease height;
+}
+
+/* =============== TEXT COLOR ADJUSTMENTS =============== */
+
+/* Ensure all text has good contrast against darker backgrounds */
+.text-muted {
+  color: #b0b0b0 !important;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  color: #fff;
+}
+
+p {
+  color: #eee;
+}
+
+a {
+  color: var(--primary-color);
+}
+
+a:hover, 
+a:focus, 
+a:active {
+  color: var(--primary-hover);
+}
+
+/* Adjust portfolio captions */
+.portfolio-caption h4 {
+  color: #fff;
+}
+
+.portfolio-caption p.text-muted {
+  color: #b0b0b0 !important;
+}
+
+/* Fix modal text colors */
+.portfolio-modal p,
+.portfolio-modal h2,
+.portfolio-modal .item-intro {
+  color: #eee;
+}
+
+/* Make section subheadings more visible */
+.section-subheading.text-muted {
+  color: #c0c0c0 !important;
+}
+
+/* =============== CONTACT SECTION ENHANCEMENTS =============== */
+
+/* Enhance contact section for better spacing */
+section#contact {
+  overflow: visible;
+  margin-bottom: 40px;
+}
+
+/* Email and phone styling */
+section#contact h2.section-heading {
+  margin-bottom: 25px;
+  font-size: 36px;
+}
+
+section#contact a.neon-glow {
+  text-shadow: 0 0 10px rgba(74, 168, 255, 0.7), 
+               0 0 20px rgba(74, 168, 255, 0.5), 
+               0 0 30px rgba(74, 168, 255, 0.3);
+  transition: all 0.3s ease;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+section#contact a.neon-glow:hover {
+  text-shadow: 0 0 15px rgba(74, 168, 255, 0.8), 
+               0 0 25px rgba(74, 168, 255, 0.6), 
+               0 0 35px rgba(74, 168, 255, 0.4);
+  transform: translateY(-3px);
+}
+
+/* Make contact elements more responsive */
+@media (max-width: 768px) {
+  section#contact h2.section-heading {
+    font-size: 28px;
+  }
+  
+  section#contact a.neon-glow {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  section#contact h2.section-heading {
+    font-size: 24px;
+  }
+  
+  section#contact a.neon-glow {
+    font-size: 20px;
+  }
+  
+  section#contact .glass-card {
+    padding: 25px !important;
+  }
+}
+
+/* Fix inconsistent widths in portfolio items */
+.col-md-3,
+.col-sm-6 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Override any Bootstrap conflicting styles */
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+/* Fix grid layout for portfolio items */
+@media (min-width: 768px) {
+  .col-sm-6 {
+    width: 50%;
+    float: left;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-md-3 {
+    width: 25%;
+    float: left;
+  }
+}
+
+/* Override any conflicting styles */
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 767px) {
+  .row {
+    display: block;
+  }
+  
+  .portfolio-item {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+/* Ensure consistent sizing without breaking grid */
+.portfolio-item {
+  height: 370px;
+  margin-bottom: 30px;
+  transition: all 0.4s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+}
+
+/* Portfolio grid spacing */
+.portfolio-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+  .portfolio-grid {
+    display: block;
+  }
+} 
